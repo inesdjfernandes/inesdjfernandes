@@ -4,20 +4,7 @@ var Zona = require('../app/models/zona');
 var Recomendacoes = require('../app/models/recomendacoes');
 var router = express.Router();
 ///
-
-//POST http://localhost:8081/api/paises
-router.post('/', function (req, res) {
-    var paises = new Paises();      // create a new instance of the Paises model
-    paises.nome_pais = req.body.nome_pais;  // set the paises name (comes from the request)
-    paises.cod_zonageo = req.body.cod_zonageo;
-
-    // save the país and check for errors
-    paises.save(function (err) {
-        if (err)
-            res.send(err);
-        res.json({ message: 'País criado!' });
-    });
-});
+////
 
 // find by ID
 router.get('/:cod_pais/recomendacoes', async function (req, res) {
