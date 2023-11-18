@@ -18,19 +18,6 @@ router.post('/', function (req, res) {
         res.json({ message: 'País criado!' });
     });
 });
-///
-// Obter/Pesquisar todos os países (accessed at GET http://localhost:8082/api/paises)
-router.get('/', function (req, res) {
-    Paises.find(function (err, paises) {
-        if (err){
-            res.send(err);
-        } else {
-             res.json(paises);
-        }
-            
-       
-    });
-});
 
 // find by ID
 router.get('/:cod_pais/recomendacoes', async function (req, res) {
