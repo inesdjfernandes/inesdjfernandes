@@ -9,7 +9,6 @@ var router = express.Router();
 router.post('/', function (req, res) {
     var paises = new Paises();      // create a new instance of the Paises model
     paises.nome_pais = req.body.nome_pais;  // set the paises name (comes from the request)
-    paises.cod_pais = req.body.cod_pais;
     paises.cod_zonageo = req.body.cod_zonageo;
 
     // save the país and check for errors
@@ -19,7 +18,7 @@ router.post('/', function (req, res) {
         res.json({ message: 'País criado!' });
     });
 });
-
+///
 // Obter/Pesquisar todos os países (accessed at GET http://localhost:8082/api/paises)
 router.get('/', function (req, res) {
     Paises.find(function (err, paises) {
